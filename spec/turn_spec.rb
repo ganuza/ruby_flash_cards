@@ -52,6 +52,27 @@ describe Turn do
     card = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
     turn = Turn.new("Saturn", card)
 
+    expect(turn.card).to eq(card)
+  end
+
+  it 'has a guess' do
+    card = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
+    turn = Turn.new("Saturn", card)
+
     expect(turn.guess).to eq("Saturn")
+  end
+
+  it 'can check if guess is incorrect' do
+    card = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
+    turn = Turn.new("Saturn", card)
+
+    expect(turn.correct?).to eq(false)
+  end
+
+  it 'gives feedback for incorrect guesss' do
+    card = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
+    turn = Turn.new("Saturn", card)
+
+    expect(turn.feedback).to eq("Incorrect.")
   end
 end
