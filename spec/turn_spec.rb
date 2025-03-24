@@ -47,4 +47,11 @@ describe Turn do
 
     expect(turn).to be_instance_of(Turn)
   end
+
+  it 'has a card' do
+    card = Card.new("Which planet is closest to the sun?", "Mercury", :STEM)
+    turn = Turn.new("Saturn", card)
+
+    expect(turn.guess).to eq("Saturn")
+  end
 end
