@@ -8,7 +8,7 @@ class Round
   end
 
   def current_card
-    @deck.cards[@turns.count]
+    @deck.cards[@turns.length]
   end
 
 end
