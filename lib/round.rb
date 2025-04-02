@@ -17,4 +17,14 @@ class Round
     return turn # You don't have to be explicit with the return, like I've done here
   end
 
+  def number_correct
+    count = 0
+    @turns.each do |turn|
+      if turn.correct?
+        count += 1
+      end
+    end
+    count
+  end
+
 end
