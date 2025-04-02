@@ -38,7 +38,7 @@ class Round
   end
 
   def percent_correct
-    return number_correct.to_f / @turns.count * 100
+    number_correct.to_f / @turns.count * 100 # to_f converts the integer to a float
   end
 
 end
