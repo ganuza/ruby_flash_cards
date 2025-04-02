@@ -41,4 +41,18 @@ class Round
     number_correct.to_f / @turns.count * 100 # to_f converts the integer to a float
   end
 
+  def percent_correct_by_category(category)
+    turn_by_category_count = 0
+    @turns.each do |turn|
+      if turn.card.category == category
+        turn_by_category_count += 1
+      end
+    end
+    if turn_by_category_count == 0
+      return 0.0
+    else
+      return number_correct_by_category(category).to_f / turn_by_category_count * 100
+    end
+  end
+
 end
